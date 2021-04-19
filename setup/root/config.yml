@@ -1,0 +1,12 @@
+web_server:
+  bind: 0.0.0.0
+  port: 3539
+  web_ui: yes
+
+tasks:
+ task name:
+    rss: http://example.com/torrents.xml
+    series:
+      - pioneer one
+      - some series
+    download: /config
