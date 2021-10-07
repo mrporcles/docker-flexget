@@ -1,7 +1,6 @@
-FROM python:alpine
+FROM python:3.9-alpine
 LABEL maintainer mrporcles@gmail.com
-RUN apk update && apk upgrade && apk add g++ bash shadow linux-headers 
-RUN pip install --global-option build --global-option --force flexget supervisor
+RUN apk update && apk upgrade && apk add g++ bash shadow linux-headers && pip3 install flexget supervisor
 
 ADD setup/*.conf /etc/supervisor.conf
 ADD setup/root/*.sh /root/
