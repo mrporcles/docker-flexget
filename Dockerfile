@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 LABEL maintainer mrporcles@gmail.com
-RUN apk update && apk upgrade && apk add g++ bash shadow linux-headers && pip3 install flexget supervisor
+RUN apk update && apk upgrade && apk add g++ bash shadow linux-headers && pip3 install flexget supervisor colorama
 
 ADD setup/*.conf /etc/supervisor.conf
 ADD setup/root/*.sh /root/
