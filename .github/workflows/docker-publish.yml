@@ -51,7 +51,7 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags:
+          tags: |
             type=raw, value=latest
             type=sha,format=long
             type=schedule,pattern={{date 'YYYYMMDD-HHmmss'}}
