@@ -52,9 +52,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw, value=latest
+            type=raw, value=latest,enable={{is_default_branch}}
             type=sha,format=long
-            type=schedule,pattern={{date 'YYYYMMDD-HHmmss'}}
+            type=raw,pattern={{date 'YYYYMMDD-HHmmss'}}
             type=ref,event=branch
             type=ref,event=tag
             type=ref,event=pr
